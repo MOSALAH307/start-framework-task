@@ -1,19 +1,21 @@
-<nav class="bg-gray-800">
+<nav class="bg-gray-700 fixed w-full">
   <div class="mx-auto max-w-7xl px-10 h-24 flex justify-between items-center">
-    <h1 class="text-2xl text-white uppercase tracking-wide font-bold">
+    <a
+      class="text-2xl text-white uppercase tracking-wide font-bold cursor-pointer"
+      [routerLink]="''" (click)="closeMenu()"
+    >
       start framework
-    </h1>
-    <div class="flex gap-8">
-      @for (link of navLinks; track link.id) {
-      <button
-        class="text-white text-base uppercase p-2 rounded-md font-semibold cursor-pointer"
-        [routerLink]="link.href"
-        routerLinkActive="bg-green-600"
-        [routerLinkActiveOptions]="{exact: true}"
-      >
-        {{ link.name }}
-      </button>
-      }
+    </a>
+    <div class="hidden md:flex gap-8">
+      <app-nav-links></app-nav-links>
     </div>
+    <button class="text-2xl text-white md:hidden" (click)="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </div>
+  @if (isMenuOpen) {
+    <div class="flex gap-8 px-8">
+      <app-nav-links class="mb-2"></app-nav-links>
+    </div>
+    }
 </nav>

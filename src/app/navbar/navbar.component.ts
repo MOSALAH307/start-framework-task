@@ -1,23 +1,21 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-
-interface navLink {
-  id: number,
-  name: string,
-  href: string
-}
-
+import { NavLinksComponent } from "../nav-links/nav-links.component";
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, NavLinksComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  navLinks: navLink[] = [
-    { id: 1, name: 'about', href: 'about' },
-    { id: 2, name: 'portfolio', href: 'portfolio' },
-    { id: 3, name: 'contact', href: 'contact' },
-  ];
+  isMenuOpen: boolean = false
+
+  toggleMenu: () => void = () => {
+    this.isMenuOpen = !this.isMenuOpen
+  }
+
+  closeMenu: () => void = () => {
+    this.isMenuOpen = false
+  }
 }

@@ -1,0 +1,10 @@
+@for (link of navLinks; track link.id) {
+      <button
+        class="text-white text-base uppercase p-2 rounded-md font-semibold cursor-pointer"
+        [routerLink]="link.href"
+        routerLinkActive="bg-green-600"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        {{ link.name }}
+      </button>
+      }
