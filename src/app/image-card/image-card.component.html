@@ -1,0 +1,28 @@
+<div class="rounded-lg cursor-pointer relative group">
+  <!-- Background and Plus Icon -->
+  <div
+    class="h-full w-full absolute top-0 left-0 flex items-center justify-center bg-teal-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+  >
+    <i class="fa-solid fa-plus text-white text-7xl"></i>
+  </div>
+
+  <!-- Image -->
+  <img
+    (click)="toggleImgModal()"
+    [src]="src"
+    [alt]="alt"
+    class="rounded-lg w-full h-full object-cover group-hover:opacity-10 transition-opacity duration-300"
+  />
+</div>
+<!-- Modal -->
+@if (openImg) {
+<div class="fixed inset-0 w-screen h-screen bg-faded-0 bg-opacity-70 flex justify-center items-center z-50" (click)="toggleImgModal()">
+  <div class="w-[80%] max-w-[800px] p-2">
+    <img
+      [src]="src"
+      [alt]="alt"
+      class="rounded-lg w-full h-auto object-cover"
+      />
+  </div>
+</div>
+}

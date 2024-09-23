@@ -1,5 +1,13 @@
 <div class="flex gap-6 justify-center items-center">
-  <div class="w-20 bg-white h-1 rounded-md"></div>
-  <span class="text-white"><i class="fa-solid fa-star"></i> </span>
-  <div class="w-20 bg-white h-1 rounded-md"></div>
+  <div
+    class="w-20 h-1 rounded-md"
+    [ngStyle]="{ 'background-color': colorString }"
+  ></div>
+  <span [ngStyle]="{ color: colorString }"
+    ><i class="fa-solid fa-star"></i>
+  </span>
+  <div
+    class="w-20 h-1 rounded-md"
+    [ngStyle]="{ 'background-color': colorString }"
+  ></div>
 </div>

@@ -1,4 +1,4 @@
-<nav class="bg-gray-700 fixed w-full">
+<nav class="bg-gray-700 fixed w-full z-50">
   <div class="mx-auto max-w-7xl px-10 h-24 flex justify-between items-center">
     <a
       class="text-2xl text-white uppercase tracking-wide font-bold cursor-pointer"
@@ -15,7 +15,7 @@
   </div>
   @if (isMenuOpen) {
     <div class="flex gap-8 px-8">
-      <app-nav-links class="mb-2"></app-nav-links>
+      <app-nav-links class="mb-2" (click)="closeMenu()"></app-nav-links>
     </div>
     }
 </nav>

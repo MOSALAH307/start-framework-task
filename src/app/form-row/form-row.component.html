@@ -1,0 +1,10 @@
+<div class="grid place-items-center mb-8 gap-3">
+  @if (data !== "") {<label [for]="labelString" class="w-full text-start text-teal-500">{{ labelString }}</label>}
+  <input
+    [(ngModel)]="data"
+    [name]="labelString"
+    [placeholder]="labelString"
+    [type]="type"
+    class="h-6 w-full border-b-2 rounded-md py-4"
+  />
+</div>

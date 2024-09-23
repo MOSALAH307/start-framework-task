@@ -1,1 +1,16 @@
-<p>potfolio works!</p>
+<div class="grid place-items-center p-32 max-sm:p-24">
+  <div class="flex items-center flex-col gap-2">
+    <h1 class="text-teal-600 uppercase text-3xl font-bold tracking-wide max-sm:text-xl">
+      portfolio component
+    </h1>
+    <app-star colorString="#2c3e50"></app-star>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
+    @for (image of imgContainer; track image.id) {
+      <app-image-card [src]="image.src" [alt]="image.alt"></app-image-card>
+    }
+    @for (image of imgContainer; track image.id) {
+      <app-image-card [src]="image.src" [alt]="image.alt"></app-image-card>
+    }
+  </div>
+</div>
